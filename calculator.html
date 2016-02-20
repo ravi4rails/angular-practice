@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/mathapp.js"></script>
+  </head>
+  <body>
+  <div class="container" ng-app="calculator">
+    <div class="col-sm-2" ng-controller="calculatorController">
+      <input type="text" ng-model='val1' placeholder="Insert value" class="form-control">
+      <input type="text" ng-model='val2' placeholder="Insert value" class="form-control">
+      <button ng-click="getSum(val1, val2)" class="btn btn-primary btn-block">Add</button>
+      <button ng-click="getSubtraction(val1, val2)" class="btn btn-primary btn-block">Subtract</button>
+      <button ng-click="getMultiplication(val1, val2)" class="btn btn-primary btn-block">Multiply</button>
+      <button ng-click="getDivision(val1, val2)" class="btn btn-primary btn-block">Divide</button>
+      <h3>{{result}}</h3>
+    </div>
+  </div>
+  </body>
+</html>

@@ -13,10 +13,11 @@
         <h3>Title:<span ng-bind="title"></span></h3><br>
         <p>Description:<span ng-bind="description"></span></p>
       </div>
-      <div ng-init="players = [{name: 'Brandon Mac'}, {name: 'Taylor Nike'}, {name: 'Brandon Smith'}, {name: 'Ian Smith'}, {name: 'Ian Bothom'}, {name: 'Brandon Mac'},{name: 'Brandon Mac'},{name: 'Brandon Mac'},{name: 'Brandon Mac'} ]">
+      <!-- ng-init directive: Initializes the application data. -->
+      <div ng-init="players = [{name: 'Brandon Mac', matches: 190, average: 44}, {name: 'Taylor Nike',matches: 190, average: 49}, {name: 'Brandon Smith',matches: 180, average: 41}, {name: 'Ian Smith',matches: 290, average: 44}, {name: 'Ian Bothom',matches: 390, average: 39}, {name: 'Brandon Mac',matches: 190, average: 44},{name: 'Brandon Mac',matches: 190, average: 44},{name: 'Brandon Mac',matches: 100, average: 90},{name: 'Brandon Mac',matches: 190, average: 44} ]">
         <ol>
           <li ng-repeat='player in players'>
-            {{'Name :' + player.name}}
+            {{'Name :' + player.name + ' has scored ' + player.average * player.matches + ' runs.'}}
           </li>
         </ol>
       </div>
