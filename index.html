@@ -1,10 +1,9 @@
 <html>
   <head>
     <title>AngularJs</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap.css">
-    <script type="text/javascript" src="bootstrap.js"></script>
-    <script type="text/javascript" src="angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </head>
   <body>
     <div ng-app="spicyApp">
@@ -16,6 +15,18 @@
       </div>
       <input type="text" ng-model="name">
       <h3>Hi, <span ng-bind="name"></span>!</h3>
+      <div ng-controller = "studentController">
+        Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
+        Enter last name: <input type = "text" ng-model = "student.lastName"><br>
+        <br>
+        You are entering: {{student.fullName()}}
+      </div>
+      <input type="text" ng-model="title">
+      <textarea ng-model="description"></textarea>
+      <div class="container" style="border:1px solid #280000;">
+        <h1 ng-bind="title">Title:</h1><br>
+        <p ng-bind="description">Description:</p>
+      </div>
     </div>
   </body>
 </html>

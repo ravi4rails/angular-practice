@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Angular Blog</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+  </head>
+  <body>
+  <div class="container" ng-app=''>
+    <div class="col-sm-6 form-group">
+      <input type="text" ng-model="title" class="form-control">&nbsp
+      <textarea ng-model="description" class="form-control"></textarea>&nbsp
+      <div class="" style="border:1px solid #280000;">
+        <h3>Title:<span ng-bind="title"></span></h3><br>
+        <p>Description:<span ng-bind="description"></span></p>
+      </div>
+      <div ng-init="players = [{name: 'Brandon Mac'}, {name: 'Taylor Nike'}, {name: 'Brandon Smith'}, {name: 'Ian Smith'}, {name: 'Ian Bothom'}, {name: 'Brandon Mac'},{name: 'Brandon Mac'},{name: 'Brandon Mac'},{name: 'Brandon Mac'} ]">
+        <ol>
+          <li ng-repeat='player in players'>
+            {{'Name :' + player.name}}
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
