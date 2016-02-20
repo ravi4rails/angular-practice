@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Angular Filter</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+  </head>
+  <body>
+    <div class="container" ng-app=''>
+      <div ng-init="employees = [
+      {name:'John Player', email:'john@player.com'},
+      {name:'Steeve Smith', email:'steeve@mailinator.com'},
+      {name:'John Farnandees', email:'john@mailer.com'},
+      {name:'John Player', email:'john@player.com'},
+      {name:'Mical Player', email:'mical@player.com'},
+      {name:'Christeena Adwards', email:'chricteena@mail.com'},
+      {name:'Sohan Player', email:'john@player.com'}
+      ]">
+      </div>
+      <label>Search: <input ng-model="searchEmployee"></label>
+      <table id="searchEmployeeResults">
+        <tr><th>Name</th><th>Email</th></tr>
+        <tr ng-repeat="employee in employees | filter:searchEmployee">
+          <td>{{employee.name}}</td>
+          <td>{{employee.email}}</td>
+        </tr>
+      </table>
+      <hr>
+      <label>Any: <input ng-model="search.$"></label> <br>
+      <label>Name only <input ng-model="search.name"></label><br>
+      <label>Email only <input ng-model="search.email"></label><br>
+      <label>Equality <input type="checkbox" ng-model="strict"></label><br>
+      <table id="searchObjResults">
+        <tr><th>Name</th><th>Phone</th></tr>
+        <tr ng-repeat="employeeObj in employees | filter:search:strict">
+          <td>{{employeeObj.name}}</td>
+          <td>{{employeeObj.email}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
