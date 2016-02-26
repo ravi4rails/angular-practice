@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>AngularJs</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+  </head>
+  <body style="padding-top:100px;">
+    <div class="container" ng-app="test">
+      <div class="col-md-8 text-center">
+        <div ng-controller="getSignInMessage">
+          <input type="text" ng-model="email" placeholder="Enter Your Email"/>
+          <br>
+          <input type="password" placeholder="Enter Your password"/>
+          <br>
+          <button ng-click="getMessage(email)" class="btn btn-success">ClickMe</button>
+          <h2>{{message}}</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var myApp = angular.module('test', []);
+    myApp.controller('getSignInMessage', ['$scope', function($scope){
+      $scope.getMessage = function(email) {
+        if(email == ''){
+          $scope.message = 'Email is required';  
+        } else{
+          $scope.message = 'You can Proceed Now';
+        }        
+      }
+    }])
+  </script>
+</html>
